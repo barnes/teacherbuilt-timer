@@ -16,3 +16,5 @@
 
 ### 07.25.2021
 * Abandoning authentication right now for 'Room Codes'. Able to create and join rooms. Need to implment the time functionality. 
+* Need to pass button press events down from JoinRoom to CreateRoom components.
+* Rename components to Remote and Display?
