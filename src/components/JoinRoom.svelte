@@ -1,5 +1,6 @@
 <script>
     import {supabase} from '../lib/db'
+    import {createEventDispatcher} from 'svelte'
     let showRoom = false;
     let joinCode = '';
     let connected = false;
@@ -20,7 +21,10 @@
         .from('rooms')
         .update({'time': 1})
         .eq('joinCode', joinCode)
+
+        dispatchEvent('timerStarted', {joinCode})
     }
+
 </script>
 
 {#if connected}

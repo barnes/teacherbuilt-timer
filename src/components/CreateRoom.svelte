@@ -27,14 +27,10 @@
             console.log(error.message)
         } finally {
         }
+        window.location.href = `/rooms/${joinCode}`;
+
     }
 
-    const rooms = supabase
-        .from('rooms:joinCode=eq.joinCode')
-        .on('UPDATE', payload => {
-            console.log('Change received!', payload)
-        })
-        .subscribe()
 </script>
 
 <form on:submit|preventDefault={createRoom}>
